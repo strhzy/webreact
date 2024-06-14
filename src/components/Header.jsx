@@ -9,9 +9,8 @@ const Header = () => {
         <Container>
           <Navbar.Brand href="/">ReactPR</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/cart">Cart</Nav.Link>
-            <Nav.Link href="/overlay">Overlay</Nav.Link>
+            <Nav.Link href="/catalogue">Каталог</Nav.Link>
+            <Nav.Link href="/overlay">Избранное</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
