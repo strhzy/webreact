@@ -4,6 +4,10 @@ import axios from 'axios'
 
 const CartItem = (props) => {
 
+    const onSearch = (inputValue) => {
+        props.setSearch(inputValue.target.value);
+    }
+
     const onAddOverlay = (obj) => {
         try{
             if(props.overlayItems.find(item => Number(item.id) === Number(obj.id))){
@@ -22,8 +26,13 @@ const CartItem = (props) => {
 
     return (
         <div>
+            <div>
+                <input onChange={onSearch} placeholder='Поиск'></input>
+            </div>
             {
-                props.item.map(obj => {
+                props.item
+                .filter((item) => item.name.toString().toLowerCase().includes(props.search.toString().toLowerCase()))
+                .map(obj => {
                     return(
                         <Item
                             key={obj.id}

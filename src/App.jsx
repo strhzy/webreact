@@ -19,6 +19,7 @@ function App() {
     async function axiosData() {
       const catalogueData = await axios.get('http://localhost:3001/catalogue')
       const overlayData = await axios.get('http://localhost:3001/overlays')
+      
 
 
       setCatalogue(catalogueData.data);
@@ -57,7 +58,10 @@ function App() {
               element={
                 <CartItem item={catalogue} 
                 overlayItems={overlayItems} 
-                setoverlayItems={setoverlayItems}/>
+                setoverlayItems={setoverlayItems}
+                setSearch={setSearch}
+                search={search}
+                />
               }
               />
             <Route
